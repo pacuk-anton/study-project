@@ -1,0 +1,23 @@
+<databaseChangeLog
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+  <!-- TODO: check -->
+  <changeSet id="10/07/2020" author="developer">
+    <createTable tableName="users">
+      <column name="id" type="INT">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+      <column name="first_name" type="NVARCHAR(50)"/>
+      <column name="last_name" type="NVARCHAR(50)"/>
+      <column name="active" type="BIT">
+        <constraints nullable="false"/>
+      </column>
+    </createTable>
+    <loadData tableName="users" file="liquibase/data/users.csv">
+      <column name="active" type="BOOLEAN"/>
+    </loadData>
+  </changeSet>
+</databaseChangeLog>

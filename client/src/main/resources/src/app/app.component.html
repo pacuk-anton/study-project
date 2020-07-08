@@ -1,0 +1,10 @@
+<div class="sticky-top">
+  <div class="nav">
+    <div *ngFor="let menuItem of menuItems;" class="nav-link">
+      <a routerLink="/{{ menuItem.link }}">{{ menuItem.name }}</a>
+    </div>
+  </div>
+</div>
+
+<router-outlet>
+</router-outlet>
